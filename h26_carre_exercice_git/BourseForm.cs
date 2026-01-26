@@ -9,16 +9,19 @@ public partial class BourseForm : Form {
         InitializeComponent();
         MettreAJourAffichageApresActionUtilisateur();
         MettreAJourAffichageValeurAction();
+    }
 
+    public string DecimalVersArgent(decimal montant) {
+        return Math.Round(montant, 2).ToString() + "$";
     }
 
     public void MettreAJourAffichageValeurAction() {
-        affichageValeurActionLabel.Text = valeurAction.ToString();
+        affichageValeurActionLabel.Text = DecimalVersArgent(valeurAction);
     }
 
     public void MettreAJourAffichageApresActionUtilisateur() {
         affichageNombreActionsLabel.Text = nombreActions.ToString();
-        affichageMontantBanqueLabel.Text = montantEnBanque.ToString();
+        affichageMontantBanqueLabel.Text = DecimalVersArgent(montantEnBanque);
     }
 
     public void AcheterAction() {
