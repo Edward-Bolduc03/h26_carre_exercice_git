@@ -7,15 +7,46 @@ public partial class BourseForm : Form {
 
     public BourseForm() {
         InitializeComponent();
+        MettreAJourAffichageApresActionUtilisateur();
+        MettreAJourAffichageValeurAction();
+
+    }
+
+    public void MettreAJourAffichageValeurAction() {
+        affichageValeurActionLabel.Text = valeurAction.ToString();
+    }
+
+    public void MettreAJourAffichageApresActionUtilisateur() {
+        affichageNombreActionsLabel.Text = nombreActions.ToString();
+        affichageMontantBanqueLabel.Text = montantEnBanque.ToString();
     }
 
     public void AcheterAction() {
         nombreActions++;
+        montantEnBanque -= valeurAction;
+        MettreAJourAffichageApresActionUtilisateur();
     }
 
     public void VendreAction() {
-        if (nombreActions > 0) {
-            nombreActions--;
+        decimal valeurPortefeuille = nombreActions * valeurAction;
+        int nouveauNombre = Math.Max(0, nombreActions - 1);
+
+        nombreActions = nouveauNombre;
+
+        decimal nouvelleValeurPortefeuille = nombreActions * valeurAction;
+
+        if (nouvelleValeurPortefeuille < valeurPortefeuille) {
+            montantEnBanque += valeurAction;
         }
+
+        MettreAJourAffichageApresActionUtilisateur();
+    }
+
+    private void acheterButton_Click(object sender, EventArgs e) {
+        AcheterAction();
+    }
+
+    private void vendreButton_Click(object sender, EventArgs e) {
+        VendreAction();
     }
 }

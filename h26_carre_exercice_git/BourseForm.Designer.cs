@@ -99,7 +99,7 @@
             acheterButton.TabIndex = 6;
             acheterButton.Text = "Acheter";
             acheterButton.UseVisualStyleBackColor = true;
-            acheterButton.Click += this.acheterButton_Click;
+            acheterButton.Click += acheterButton_Click;
             // 
             // vendreButton
             // 
@@ -109,6 +109,7 @@
             vendreButton.TabIndex = 7;
             vendreButton.Text = "Vendre";
             vendreButton.UseVisualStyleBackColor = true;
+            vendreButton.Click += vendreButton_Click;
             // 
             // BourseForm
             // 
