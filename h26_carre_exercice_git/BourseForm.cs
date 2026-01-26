@@ -28,16 +28,8 @@ public partial class BourseForm : Form {
     }
 
     public void VendreAction() {
-        decimal valeurPortefeuille = nombreActions * valeurAction;
-        int nouveauNombre = Math.Max(0, nombreActions - 1);
-
-        nombreActions = nouveauNombre;
-
-        decimal nouvelleValeurPortefeuille = nombreActions * valeurAction;
-
-        if (nouvelleValeurPortefeuille < valeurPortefeuille) {
-            montantEnBanque += valeurAction;
-        }
+        nombreActions--;
+        montantEnBanque += valeurAction;
 
         MettreAJourAffichageApresActionUtilisateur();
     }
