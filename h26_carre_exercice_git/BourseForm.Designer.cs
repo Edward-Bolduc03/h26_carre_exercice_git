@@ -99,6 +99,7 @@
             acheterButton.TabIndex = 6;
             acheterButton.Text = "Acheter";
             acheterButton.UseVisualStyleBackColor = true;
+            acheterButton.Click += this.acheterButton_Click;
             // 
             // vendreButton
             // 
