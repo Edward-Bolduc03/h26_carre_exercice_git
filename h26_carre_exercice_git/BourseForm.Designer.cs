@@ -1,6 +1,6 @@
 ﻿namespace h26_carre_exercice_git
 {
-    partial class Form1
+    partial class BourseForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -26,12 +26,17 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+        private void InitializeComponent() {
+            SuspendLayout();
+            // 
+            // BourseForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "BourseForm";
+            Text = "Bourse";
+            ResumeLayout(false);
         }
 
         #endregion
