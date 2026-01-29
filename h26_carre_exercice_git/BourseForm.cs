@@ -24,17 +24,25 @@ public partial class BourseForm : Form {
         affichageMontantBanqueLabel.Text = DecimalVersArgent(montantEnBanque);
     }
 
-    public void AcheterAction() {
-        nombreActions++;
-        montantEnBanque -= valeurAction;
-        MettreAJourAffichageApresActionUtilisateur();
+    public void AcheterAction() 
+    {
+        if (montantEnBanque > 0)
+        {
+            nombreActions++;
+            montantEnBanque -= valeurAction;
+            MettreAJourAffichageApresActionUtilisateur();
+        }
     }
 
-    public void VendreAction() {
-        nombreActions--;
-        montantEnBanque += valeurAction;
+    public void VendreAction() 
+    {
+        if (nombreActions > 0)
+        {
+            nombreActions--;
+            montantEnBanque += valeurAction;
 
-        MettreAJourAffichageApresActionUtilisateur();
+            MettreAJourAffichageApresActionUtilisateur();
+        }
     }
 
     private void acheterButton_Click(object sender, EventArgs e) {
